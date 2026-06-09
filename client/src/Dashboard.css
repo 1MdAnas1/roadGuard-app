@@ -1,0 +1,240 @@
+/* --- Dashboard Styles --- */
+.dashboard-container {
+  max-width: 100%;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+
+.user-welcome h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dark-color);
+  background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.user-welcome p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dashboard-content h2 {
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+  color: var(--dark-color);
+  position: relative;
+  display: inline-block;
+}
+
+.dashboard-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+  border-radius: 2px;
+}
+
+/* --- Empty State --- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--light-color), #f0f4f8);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.empty-state:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.empty-icon {
+  font-size: 4.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--success-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.empty-state h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- QR Codes Grid --- */
+.qr-codes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.qr-card {
+  background: linear-gradient(135deg, #fff, var(--primary-light));
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+
+.qr-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+}
+
+.qr-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.qr-image {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.qr-card:hover .qr-image {
+  background: linear-gradient(135deg, #e2e8f0, #f8fafc);
+}
+
+.qr-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.qr-card:hover .qr-image img {
+  transform: scale(1.05);
+}
+
+.qr-details {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.qr-details h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--success-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.qr-details p {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.qr-details p strong {
+  color: var(--dark-color);
+  min-width: 100px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.qr-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.qr-actions button {
+  padding: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  transition: var(--transition);
+  position: relative;
+}
+
+.btn-download {
+  color: var(--success-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.btn-download:hover {
+  background-color: rgba(42, 157, 143, 0.08);
+  color: var(--success-color);
+}
+
+.btn-delete {
+  color: var(--error-color);
+}
+
+.btn-delete:hover {
+  background-color: rgba(230, 57, 70, 0.08);
+  color: var(--error-color);
+}
+
+/* --- Loading State --- */
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
